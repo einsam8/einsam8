@@ -44,7 +44,7 @@ if you interested in algorithms, data structure, machine learning, programming l
 ## Support me
 
 <details><summary>_Please don't at this point in time, cause I don't have anything yet._</summary>
-~~Not like you gonna do anyway.~~
+<del>~Not like you gonna do anyway.</del>
 </details>
 
 [![ko-fi](https://storage.ko-fi.com/cdn/brandasset/kofi_s_tag_dark.png)](https://ko-fi.com/G2G2MPJIU)
