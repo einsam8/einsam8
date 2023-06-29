@@ -22,7 +22,7 @@ This github is to contain projects that I likely will maintain or main projects.
 ### Software
 
 ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=Linux&logoColor=black&style=for-the-badge)
-[![NeoVim]](https://img.shields.io/badge/NeoVim-57A143?logo=neovim&logoColor=white&style=for-the-badge)(https://github.com/newbee1905/nvim/tree/lazy)
+[![NeoVim](https://img.shields.io/badge/NeoVim-57A143?logo=neovim&logoColor=white&style=for-the-badge)](https://github.com/newbee1905/nvim/tree/lazy)
 ![Vim](https://img.shields.io/badge/Vim-019733?logo=vim&logoColor=white&style=for-the-badge)
 [![Zsh](https://img.shields.io/badge/Zsh-f15a24?style=for-the-badge)](https://git.sr.ht/~newbee1905/dots/tree/main/item/user/.config/zsh/.zshrc)
 
@@ -41,8 +41,8 @@ if you interested in algorithms, data structure, machine learning, programming l
 
 ## Support me
 
-_Please don't at this point in time, cause I don't have anything yet._
-
-||Not like you gonna do anyway.||
+<details><summary>_Please don't at this point in time, cause I don't have anything yet._</summary>
+~~Not like you gonna do anyway.~~
+</details>
 
 [![ko-fi](https://storage.ko-fi.com/cdn/brandasset/kofi_s_tag_dark.png)](https://ko-fi.com/G2G2MPJIU)
