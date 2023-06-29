@@ -37,8 +37,11 @@ if you interested in algorithms, data structure, machine learning, programming l
 ### My GitHub Stats:
 
 <div style="display:flex;justify-content:space-around;">
+
 ![einsam8](https://github-readme-stats.vercel.app/api?username=einsam8&show_icons=true&theme=gruvbox)
+
 ![newbee1905](https://github-readme-stats.vercel.app/api?username=newbee1905&show_icons=true&theme=tokyonight)
+
 </div>
 
 ## Support me
