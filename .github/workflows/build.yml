@@ -38,11 +38,12 @@ jobs:
         shell: bash
         run: trunk build --release
 
-      - name: Auto Minify
-        uses: nizarmah/auto-minify@v2.1
+      # Job for Minify-JS
+      - name: Minify-JS Action
+        uses: jossydevers/minify-js@v1.0.0
         with:
-          maxdepth: 1
-          directory: 'dist'
+          directory: 'dist' # (OPTIONAL)
+          output: 'dist' # (OPTIONAL)
 
       # Auto commits minified files to the repository
       # Ignore it if you don't want to commit the files to the repository 
