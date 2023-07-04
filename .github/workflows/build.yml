@@ -45,9 +45,9 @@ jobs:
 
       - name: Setup minify-js
         run:
-          - npm install -g minify
-          - find . -name "*.js" -exec bash -c 'mv {} {}_; cat {}_ | minify --js > {}; rm {}_' \;
-          - find . -name "*.css" -exec bash -c 'mv {} {}_; cat {}_ | minify --css > {}; rm {}_' \;
+          npm install -g minify
+          find . -name "*.js" -exec bash -c 'mv {} {}_; cat {}_ | minify --js > {}; rm {}_' \;
+          find . -name "*.css" -exec bash -c 'mv {} {}_; cat {}_ | minify --css > {}; rm {}_' \;
 
 
       # Auto commits minified files to the repository
