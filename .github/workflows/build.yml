@@ -21,10 +21,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: jetli/trunk-action@v0.4.0
+      - name: Setup Trunk
+        uses: jetli/trunk-action@v0.4.0
         with:
           # Optional version of trunk to install(eg. 'v0.16.0', 'latest')
           version: 'latest'
+
+      - name: Trunk Build
         shell: bash
         run: trunk build --release
 
