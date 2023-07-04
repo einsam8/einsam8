@@ -44,7 +44,7 @@ jobs:
           node-version: 18
 
       - name: Setup minify-js
-        run:
+        run: |
           npm install -g minify
           find . -name "*.js" -exec bash -c 'mv {} {}_; cat {}_ | minify --js > {}; rm {}_' \;
           find . -name "*.css" -exec bash -c 'mv {} {}_; cat {}_ | minify --css > {}; rm {}_' \;
