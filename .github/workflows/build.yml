@@ -1,0 +1,43 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+permissions: read-all
+
+jobs:
+  trunk_check:
+    name: Trunk Check Runner
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write # For trunk to post annotations
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: jetli/trunk-action@v0.4.0
+        with:
+          # Optional version of trunk to install(eg. 'v0.16.0', 'latest')
+          version: 'latest'
+        shell: bash
+        run: trunk build --release
+
+      - name: Auto Minify
+        uses: nizarmah/auto-minify@v2.1
+        with:
+          maxdepth: 1
+          directory: 'dist'
+
+      # Auto commits minified files to the repository
+      # Ignore it if you don't want to commit the files to the repository 
+      - name: Auto committing minified files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Github Action: Auto Minified JS and CSS files"
+          branch: ${{ github.ref }}
