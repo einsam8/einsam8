@@ -21,6 +21,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          target: wasm32-unknown-unknown
+          override: true
+
       - name: Setup Trunk
         uses: jetli/trunk-action@v0.4.0
         with:
