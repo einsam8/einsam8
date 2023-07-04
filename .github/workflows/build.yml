@@ -38,12 +38,17 @@ jobs:
         shell: bash
         run: trunk build --release
 
-      # Job for Minify-JS
-      - name: Minify-JS Action
-        uses: jossydevers/minify-js@v1.0.0
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          directory: 'dist' # (OPTIONAL)
-          output: 'dist' # (OPTIONAL)
+          node-version: 18
+
+      - name: Setup minify-js
+        run:
+          - npm install -g minify
+          - find . -name "*.js" -exec bash -c 'mv {} {}_; cat {}_ | minify --js > {}; rm {}_' \;
+          - find . -name "*.css" -exec bash -c 'mv {} {}_; cat {}_ | minify --css > {}; rm {}_' \;
+
 
       # Auto commits minified files to the repository
       # Ignore it if you don't want to commit the files to the repository 
