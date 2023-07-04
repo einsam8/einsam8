@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+    <title>Doodads - Hello World!</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.jsdelivr.net/gh/hman61/doo.html@latest/dist/doo.html.min.js"></script>
+    <link href="style/styles.css" rel="preload" as="style">
+    <link href="style/styles.css" rel="stylesheet">
+
+    <script defer="" type="module">
+        Doo.define(
+            class Hello extends Doo {
+                constructor() {
+                    super();
+                    this.data = {
+                        greeting: [{ say: "World" }, { say: "Doolio" }]
+                    }
+                }
+            }
+        );
+    </script>
+    <script>
+        const info = [
+        {
+            company:'DooHTML',
+            fname:'Doolio',
+            lname:'Doe',
+            city: 'Lake Oswego',
+            phone: '310 555-1212',
+            caption: 'Fast, Clean & Powerful'
+        }]
+
+        const nav = [
+            {href:'/apps/grids/index.html',label:'Grid Samples'},
+            {href:'/apps/bars/index.html',label:'Bars - Reactivity'},
+            {href:'/apps/contacts/index.html',label:'Contacts - Infinite Scroll'},
+            {href:'/apps/nested/index.html',label:'Nested Components'},
+            {href:'/apps/todomvc/dooui/index.html',label:'ToDoo MVC'},
+            {href:'/apps/home/index.html',label:'Sample Site'},
+            {href:'/apps/html5up/index.html',label:'HTML5 UP - Integration'}
+        ]  
+    </script>
+    <template id="t1"></template>
+
+    
+<link rel="preload" href="/einsam8-49df6372187802aa_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/einsam8-49df6372187802aa.js"></head><body><doo-hello template="#t1"></doo-hello>
+
+<script type="module">import init from '/einsam8-49df6372187802aa.js';init('/einsam8-49df6372187802aa_bg.wasm');</script></body></html>
