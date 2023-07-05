@@ -49,7 +49,9 @@ jobs:
           find . -name "*.css" -exec bash -c 'mv {} {}_; cat {}_ | minify --css > {}; rm {}_' \;
 
       - name: Replace href index.html to relative path
-        run: sed -i 's/href="\//href=".\//' dist/index.html
+        run: |
+          sed -i 's/href="\//href=".\//' dist/index.html
+          sed -i "s/'\//'.\//g" dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
