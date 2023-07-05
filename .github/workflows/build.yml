@@ -1,14 +1,10 @@
 name: Build
 on:
-  push:
-    branches:
-      - main
+  push
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
-
-permissions: write-all
 
 jobs:
   trunk_check:
@@ -56,4 +52,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Github Action: Auto Minified JS and CSS files"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
