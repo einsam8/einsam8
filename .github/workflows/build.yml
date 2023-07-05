@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout
@@ -46,11 +48,13 @@ jobs:
           find . -name "*.js" -exec bash -c 'mv {} {}_; cat {}_ | minify --js > {}; rm {}_' \;
           find . -name "*.css" -exec bash -c 'mv {} {}_; cat {}_ | minify --css > {}; rm {}_' \;
 
-
-      # Auto commits minified files to the repository
-      # Ignore it if you don't want to commit the files to the repository 
-      - name: Auto committing minified files
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          commit_message: "Github Action: Auto Minified JS and CSS files"
-          branch: ${{ github.ref }}
+          # Upload entire repository
+          path: 'dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
