@@ -3,10 +3,7 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-      
+
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
