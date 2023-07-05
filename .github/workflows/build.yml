@@ -1,6 +1,7 @@
 name: Build
 on:
-  push
+  push:
+    branches: "main"
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
@@ -8,7 +9,7 @@ concurrency:
 
 jobs:
   build:
-    name: Trunk Check Runner
+    name: Build and Minify
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -52,5 +53,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Github Action: Auto Minified JS and CSS files"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
