@@ -9,6 +9,7 @@ edition = "2021"
 sycamore = "0.9.0-beta.1"
 sycamore-router = "0.9.0-beta.1"
 web-sys = { version = "0.3.64", features = ["InputEvent", "KeyboardEvent", "Location", "Storage"] }
+smartstring = { version = "1.0.1", features = ["serde"] }
 
 [profile.release]
 # Do not perform backtrace for panic on release builds.

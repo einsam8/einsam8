@@ -1,6 +1,7 @@
 use sycamore::prelude::*;
 use sycamore_router::{Route, Router, RouterProps, HistoryIntegration};
 use web_sys::{HtmlInputElement, KeyboardEvent, console};
+use smartstring::{SmartString, LazyCompact};
 
 #[derive(Route)]
 enum AppRoutes {
@@ -9,7 +10,7 @@ enum AppRoutes {
     #[to("/projects")]
     Projects,
     #[to("/blog/<id>")]
-    Blog(String),
+    Blog(SmartString<LazyCompact>),
     #[not_found]
     NotFound,
 }
@@ -76,12 +77,12 @@ fn Footer<'a, G: Html>(cx: Scope) -> View<G> {
 struct BlogProps<'a, G: Html> {
     // _content: &'a str,
     children: Children<'a, G>,
-    content: &'a String,
+    content: &'a SmartString<LazyCompact>,
 }
 
 #[component]
 fn BlogBody<'a, G: Html>(cx: Scope, props: BlogProps<'a, G>) -> View<G> {
-    let blog_content = props.content.clone();
+    let blog_content: String = props.content.to_string();
     view! { cx,
         p { (blog_content) }
     }
